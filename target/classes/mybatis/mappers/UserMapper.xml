@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tinysnow.dao.UserMapper">
+    <!--    insert方法等待修改    -->
+    <insert id="insertUser">
+    insert into user.userinfo (username, password, email)
+        values (#{username}, #{password}, #{email});
+    </insert>
+
+
+    <!--    select方法已经确认无误    -->
+    <select id="selectOneUserByUserName" resultType="com.tinysnow.bean.User">
+        select * from user.userinfo where userName = #{username};
+    </select>
+    <select id="selectOneUserById" resultType="com.tinysnow.bean.User">
+        select * from user.userinfo where id = #{id};
+    </select>
+
+
+    <update id="updatePassword" useGeneratedKeys="true">
+        update user.userinfo set password = #{newPassword} where id = #{id};
+    </update>
+</mapper>

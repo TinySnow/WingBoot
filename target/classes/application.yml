@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    username: root
+    password: tinysnow;
+    url: jdbc:mysql://localhost:3306/?useUnicode=true&serverTimezone=UTC
+      &characterEncoding=utf-8&allowPublicKeyRetrieval=true&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  profiles:
+    active: druid,mybatis
