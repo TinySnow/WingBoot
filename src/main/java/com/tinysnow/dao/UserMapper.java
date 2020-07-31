@@ -5,10 +5,18 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 /**
- * @author ilitt
+ * @author TinySnow
  */
 @Repository
 public interface UserMapper {
+
+    /**
+     * 查询密码
+     * @param username 用户名
+     * @return 返回密码，在 service 层进行比较
+     */
+    User checkPassword(String username);
+
     /**
      * 插入用户
      * @param email 用户邮箱

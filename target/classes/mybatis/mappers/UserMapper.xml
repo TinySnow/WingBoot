@@ -18,6 +18,9 @@
     <select id="selectOneUserById" resultType="com.tinysnow.bean.User">
         select * from user.userinfo where id = #{id};
     </select>
+    <select id="checkPassword" resultType="com.tinysnow.bean.User">
+        select * from user.userinfo where username = #{username};
+    </select>
 
 
     <update id="updatePassword" useGeneratedKeys="true">

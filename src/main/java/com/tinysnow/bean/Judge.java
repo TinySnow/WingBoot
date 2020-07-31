@@ -4,8 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 /**
- * @author ilitt
+ * @author TinySnow
  */
 @Data
 @NoArgsConstructor
@@ -14,5 +15,5 @@ public class Judge {
     private int judgeId;
     private String projectId;
     private String judgeName;
-    private String password;
+    private String judgePwd;
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tinysnow.dao.JudgeMapper">
+    <insert id="insertJudge">
+        insert into user.judges (projectId,judgeName,judgePwd)
+        values (#{projectId},#{judgeName},#{judgePwd});
+    </insert>
+
+
+    <select id="checkPwd" resultType="com.tinysnow.bean.Judge">
+        select * from user.judges where
+        projectId=#{projectId} and judgeName=#{judgeName};
+    </select>
+
+</mapper>
