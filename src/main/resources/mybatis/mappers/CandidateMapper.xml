@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tinysnow.mappers.CandidateMapper">
+    <select id="queryAllInfoOfACandidate" resultType="com.tinysnow.bean.Candidate">
+        select * from user.candidates;
+    </select>
+    <update id="receivedAVote">
+        update user.candidates set vote_number = vote_number + 1
+        where project_id = #{projectId}, candidate_name = #{candidateName};
+    </update>
+
+</mapper>

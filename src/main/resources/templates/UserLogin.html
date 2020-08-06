@@ -6,6 +6,7 @@
 </head>
 <body>
     <form method="post" th:action="@{/checkPwd}">
+        <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
         账户：
         <label><input type="text" name="username"></label><br/>
         密码：

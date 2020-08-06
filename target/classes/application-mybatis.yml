@@ -1,3 +1,7 @@
 mybatis:
   mapper-locations: classpath:mybatis/mappers/*.xml
   type-aliases-package: com.tinysnow.bean
+  configuration:
+    # 自动开启数据库下划线命名 与 实体类中驼峰命名法的匹配
+    # 以达到双方命名均规范的目的
+    map-underscore-to-camel-case: true

@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author ilitt
  */
 @SpringBootApplication
-@MapperScan("com.tinysnow.dao")
+@MapperScan("com.tinysnow.mappers")
 public class EntranceApplication {
 
     public static void main(String[] args) {

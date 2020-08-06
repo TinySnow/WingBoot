@@ -1,6 +1,6 @@
-package com.tinysnow.service;
+package com.tinysnow.service.impl;
 
-import com.tinysnow.dao.JudgeMapper;
+import com.tinysnow.dao.impl.JudgeDaoImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,16 +8,15 @@ import org.springframework.stereotype.Service;
  * @author TinySnow
  */
 @Service
-public class JudgeService {
+public class JudgeServiceImpl{
 
     @Autowired
-    private JudgeMapper judgeMapper;
+    private JudgeDaoImpl judgeDaoImpl;
 
     public boolean checkPwd(int projectId, String judgeName, String inputPwd) {
-        System.out.println(judgeMapper.checkPwd(projectId, judgeName)
+        System.out.println("JudgeServiceImpl:"+ judgeDaoImpl.checkPwd(projectId, judgeName)
                 .getJudgePwd().equals(inputPwd));
-        return judgeMapper.checkPwd(projectId, judgeName)
+        return judgeDaoImpl.checkPwd(projectId, judgeName)
                 .getJudgePwd().equals(inputPwd);
-
     }
 }

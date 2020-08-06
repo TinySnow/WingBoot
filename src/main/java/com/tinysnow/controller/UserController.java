@@ -1,9 +1,10 @@
 package com.tinysnow.controller;
 
 
-import com.tinysnow.service.UserService;
+import com.tinysnow.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -13,8 +14,11 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class UserController {
 
+    /**
+     * 用于调度 Service 层
+     */
     @Autowired
-    private UserService userService;
+    private UserServiceImpl userServiceImpl;
 
     /**
      * 这个 Controller 的装配，只用于访问其控制的评委登录的跳转
@@ -30,13 +34,16 @@ public class UserController {
 
     @RequestMapping("/checkPwd")
     public String checkPassword(@RequestParam("username") String username,
-                                @RequestParam("password") String inputPwd){
-        Boolean pwdCorrectCheck = userService.checkPassword(username,inputPwd);
+                                @RequestParam("password") String inputPwd,
+                                Model model){
+        Boolean pwdCorrectCheck = userServiceImpl.checkPassword(username,inputPwd);
         if (pwdCorrectCheck == null){
-            return "TempTestPage";
+            model.addAttribute("msg","账户不存在");
+            return "UserLogin";
         } else if (pwdCorrectCheck) {
             return "JudgeLogin";
         } else {
+            model.addAttribute("msg","账户或密码错误");
             return "UserLogin";
         }
     }

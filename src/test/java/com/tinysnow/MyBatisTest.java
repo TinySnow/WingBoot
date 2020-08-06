@@ -1,6 +1,7 @@
 package com.tinysnow;
 
-import com.tinysnow.dao.UserMapper;
+import com.tinysnow.dao.impl.CandidateDaoImpl;
+import com.tinysnow.dao.impl.UserDaoImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -9,11 +10,15 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class MyBatisTest {
 
     @Autowired
-    UserMapper userMapper;
+    UserDaoImpl userDaoImpl;
+
+    @Autowired
+    CandidateDaoImpl candidateDaoImpl;
 
     @Test
     void contextLoads() {
-        userMapper.insertUser("yp","l7","haemha");
-        System.out.println(userMapper.selectOneUserById(20));
+
+        System.out.println(">>>>:"+ candidateDaoImpl.queryAllInfoOfACandidate());
+        candidateDaoImpl.receivedAVote(1,"1");
     }
 }

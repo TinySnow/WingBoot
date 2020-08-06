@@ -6,6 +6,7 @@
 </head>
 <body>
     <form method="post" th:action="@{/checkJudgePwd}">
+        <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
         项目id：
         <label><input type="text" name="projectId"></label><br/>
         评委账户：

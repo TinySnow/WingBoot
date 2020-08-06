@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>投票页面</title>
+</head>
+<body>
+    <input type="submit" th:action="@{/VotingPage.html}" th:value="展示候选人">
+    <table>
+        <thead>
+            <tr>
+                <th>候选人名字</th>
+                <th>描述信息</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th th:text="${msg}"></th>
+                <th>2</th>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
