@@ -23,6 +23,6 @@ public interface CandidateMapper {
      * @param projectId
      * @param candidateName
      */
-    Candidate receivedAVote(@Param("projectId") int projectId,
+    int receivedAVote(@Param("projectId") int projectId,
                       @Param("candidateName") String candidateName);
 }

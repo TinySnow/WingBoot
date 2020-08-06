@@ -18,7 +18,7 @@ public class UserController {
      * 用于调度 Service 层
      */
     @Autowired
-    private UserServiceImpl userServiceImpl;
+    private UserServiceImpl userService;
 
     /**
      * 这个 Controller 的装配，只用于访问其控制的评委登录的跳转
@@ -33,10 +33,10 @@ public class UserController {
     }
 
     @RequestMapping("/checkPwd")
-    public String checkPassword(@RequestParam("username") String username,
+    public String checkPwd(@RequestParam("username") String username,
                                 @RequestParam("password") String inputPwd,
                                 Model model){
-        Boolean pwdCorrectCheck = userServiceImpl.checkPassword(username,inputPwd);
+        Boolean pwdCorrectCheck = userService.checkPwd(username,inputPwd);
         if (pwdCorrectCheck == null){
             model.addAttribute("msg","账户不存在");
             return "UserLogin";

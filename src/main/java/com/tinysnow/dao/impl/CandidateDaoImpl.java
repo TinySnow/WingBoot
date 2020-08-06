@@ -21,7 +21,7 @@ public class CandidateDaoImpl {
         return candidateMapper.queryAllInfoOfACandidate();
     }
 
-    public Candidate receivedAVote(int projectId, String candidateName){
+    public int receivedAVote(int projectId, String candidateName){
         return candidateMapper.receivedAVote(projectId, candidateName);
     }
 }

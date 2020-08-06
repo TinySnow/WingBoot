@@ -13,4 +13,5 @@ public class CandidateServiceImpl {
     @Autowired
     CandidateDaoImpl candidateDao;
 
+
 }

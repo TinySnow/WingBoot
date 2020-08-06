@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class JudgeController {
 
     @Autowired
-    private JudgeServiceImpl judgeServiceImpl;
+    private JudgeServiceImpl judgeService;
 
     @GetMapping("/JudgeLogin.html")
     public String jump2JudgeLogin(){
@@ -27,10 +27,10 @@ public class JudgeController {
                                 @RequestParam("judgeName") String judgeName,
                                 @RequestParam("inputPwd") String inputPwd,
                                 Model model){
-        System.out.println(projectId);
-        System.out.println(judgeName);
-        System.out.println(inputPwd);
-        boolean pwdCorrectCheck = judgeServiceImpl.checkPwd(projectId,judgeName,inputPwd);
+//        System.out.println(projectId);
+//        System.out.println(judgeName);
+//        System.out.println(inputPwd);
+        boolean pwdCorrectCheck = judgeService.checkPwd(projectId,judgeName,inputPwd);
         if(pwdCorrectCheck){
             return "VotingPage";
         } else {

@@ -14,7 +14,7 @@ public class JudgeServiceImpl{
     private JudgeDaoImpl judgeDaoImpl;
 
     public boolean checkPwd(int projectId, String judgeName, String inputPwd) {
-        System.out.println("JudgeServiceImpl:"+ judgeDaoImpl.checkPwd(projectId, judgeName)
+        System.out.println("JudgeServiceImpl->checkPwd:"+ judgeDaoImpl.checkPwd(projectId, judgeName)
                 .getJudgePwd().equals(inputPwd));
         return judgeDaoImpl.checkPwd(projectId, judgeName)
                 .getJudgePwd().equals(inputPwd);

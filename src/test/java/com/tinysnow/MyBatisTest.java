@@ -1,7 +1,12 @@
 package com.tinysnow;
 
+import com.tinysnow.bean.Judge;
 import com.tinysnow.dao.impl.CandidateDaoImpl;
+import com.tinysnow.dao.impl.JudgeDaoImpl;
 import com.tinysnow.dao.impl.UserDaoImpl;
+import com.tinysnow.service.impl.CandidateServiceImpl;
+import com.tinysnow.service.impl.JudgeServiceImpl;
+import com.tinysnow.service.impl.UserServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,15 +15,44 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class MyBatisTest {
 
     @Autowired
-    UserDaoImpl userDaoImpl;
+    UserDaoImpl userDao;
 
     @Autowired
-    CandidateDaoImpl candidateDaoImpl;
+    UserServiceImpl userService;
+
+    @Autowired
+    JudgeDaoImpl judgeDao;
+
+    @Autowired
+    JudgeServiceImpl judgeService;
+
+    @Autowired
+    CandidateDaoImpl candidateDao;
+
+    @Autowired
+    CandidateServiceImpl candidateService;
+
 
     @Test
     void contextLoads() {
+        userTest();
+        judgeTest();
+        candidateTest();
+    }
 
-        System.out.println(">>>>:"+ candidateDaoImpl.queryAllInfoOfACandidate());
-        candidateDaoImpl.receivedAVote(1,"1");
+    @Test
+    private void userTest(){
+        System.out.println(userService.checkPwd("2233", "5555"));
+        System.out.println(userDao.insertUser("ui", "9658", "iop"));
+    }
+
+    @Test
+    private void judgeTest(){
+
+    }
+
+    @Test
+    private void candidateTest(){
+
     }
 }

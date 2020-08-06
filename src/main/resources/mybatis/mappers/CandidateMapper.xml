@@ -8,7 +8,7 @@
     </select>
     <update id="receivedAVote">
         update user.candidates set vote_number = vote_number + 1
-        where project_id = #{projectId}, candidate_name = #{candidateName};
+        where project_id = #{projectId} and candidate_name = #{candidateName};
     </update>
 
 </mapper>

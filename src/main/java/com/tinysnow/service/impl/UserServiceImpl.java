@@ -13,8 +13,9 @@ public class UserServiceImpl{
     @Autowired
     UserDaoImpl userDaoImpl;
 
-    public Boolean checkPassword(String username, String inputPwd) {
-        System.out.println(">>>:"+ userDaoImpl.checkPwd(username));
+    public Boolean checkPwd(String username, String inputPwd) {
+        System.out.println("UserServiceImpl->checkPwd:" +
+                userDaoImpl.checkPwd(username));
         if (userDaoImpl.checkPwd(username) == null){
             return null;
         } else {
