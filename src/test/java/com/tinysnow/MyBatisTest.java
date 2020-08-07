@@ -35,24 +35,46 @@ public class MyBatisTest {
 
     @Test
     void contextLoads() {
-        userTest();
-        judgeTest();
+
+//        userTest(); // userTest已经完成测试无误
+//        judgeTest(); // judgeTest已经完成测试无误
         candidateTest();
     }
 
     @Test
     private void userTest(){
-        System.out.println(userService.checkPwd("2233", "5555"));
-        System.out.println(userDao.insertUser("ui", "9658", "iop"));
+        System.out.println("userTest->userService.checkPwd:"+
+                userService.checkPwd("2233", "5555"));
+        System.out.println("userTest->userDao.insertUser:"+
+                userDao.insertUser("uia", "9658", "iop"));
+        System.out.println("userTest->userDao.selectOneUserByUsername:"+
+                userDao.selectOneUserByUsername("114514"));
+        System.out.println("userTest->userDao.selectOneUserById:"+
+                userDao.selectOneUserById(25));
+        System.out.println("userTest->userDao.updatePwd:"+
+                userDao.updatePwd(30, "3693"));
     }
 
     @Test
     private void judgeTest(){
-
+        System.out.println("judgeTest->judgeService.checkPwd:"+
+                judgeService.checkPwd(1, "a", "a"));
+        System.out.println("judgeTest->judgeDao.insertJudge:"+
+                judgeDao.insertJudge(2, "kk", "123"));
+        // 这后面三个因为没有写对应的 Mapper.xml 所以还未进行测试。
+//        System.out.println("judgeTest->judgeDao.changePwd:"+
+//                judgeDao.changePwd(1, "a", "k"));
+//        System.out.println("judgeTest->judgeDao.changeUsername:"+
+//                judgeDao.changeUsername(1, "a", "hahaha"));
+//        System.out.println("judgeTest->judgeDao.deleteJudge:"+
+//                judgeDao.deleteJudge(2, "kk"));
     }
 
     @Test
     private void candidateTest(){
-
+        System.out.println("candidateTest->candidateDao.queryAllInfoOfACandidate:"+
+                candidateDao.queryAllInfoOfACandidate());
+        System.out.println("candidateTest->candidateDao.receivedAVote:"+
+                candidateDao.receivedAVote(1, "1"));
     }
 }

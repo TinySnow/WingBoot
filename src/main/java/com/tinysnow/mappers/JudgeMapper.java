@@ -22,19 +22,23 @@ public interface JudgeMapper {
      * 更改评委名字，一般是投票项目创建者在信息管理页面调用此方法
      * @param projectId 插入的评委是哪一项目的，保险起见加的参数
      * @param judgeName 需要更改的评委目前的用户名
+     * @param newName 新名字
      * @return 返回评委
      */
     Judge changeUsername(@Param("projectId") int projectId,
-                         @Param("judgeName") String judgeName);
+                         @Param("judgeName") String judgeName,
+                         @Param("newName") String newName);
 
     /**
      * 更改评委密码，一般是投票项目创建者在信息管理页面调用此方法
      * @param projectId 插入的评委是哪一项目的，保险起见加的参数
      * @param judgeName 需要更改的评委目前的用密码
+     * @param newPwd 新密码
      * @return 返回 JudgeBean 对象
      */
     Judge changePwd(@Param("projectId") int projectId,
-                    @Param("judgeName") String judgeName);
+                    @Param("judgeName") String judgeName,
+                    @Param("newPwd") String newPwd);
 
     /**
      * 插入新评委，后期可能修改此方法，因为要加上权限管理
@@ -43,7 +47,7 @@ public interface JudgeMapper {
      * @param judgePwd 插入评委的密码
      * @return 返回评委
      */
-    Judge insertJudge(@Param("projectId") int projectId,
+    int insertJudge(@Param("projectId") int projectId,
                       @Param("judgeName") String judgeName,
                       @Param("judgePwd") String judgePwd);
 

@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.tinysnow.mappers.UserDaoImpl">
+<mapper namespace="com.tinysnow.mappers.UserMapper">
     <!--    insert方法等待修改    -->
     <insert id="insertUser">
     insert into user.userinfo (username, password, email)

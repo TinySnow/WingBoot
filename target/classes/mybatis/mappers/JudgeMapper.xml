@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.tinysnow.mappers.JudgeDaoImpl">
+<mapper namespace="com.tinysnow.mappers.JudgeMapper">
     <insert id="insertJudge">
         insert into user.judges (projectId,judgeName,judgePwd)
         values (#{projectId},#{judgeName},#{judgePwd});

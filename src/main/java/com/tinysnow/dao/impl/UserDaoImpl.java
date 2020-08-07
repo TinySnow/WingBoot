@@ -19,7 +19,7 @@ public class UserDaoImpl {
         return userMapper.checkPwd(username);
     }
 
-    public User insertUser(String username, String password, String email){
+    public int insertUser(String username, String password, String email){
         return userMapper.insertUser(username, password, email);
     }
 
@@ -27,7 +27,7 @@ public class UserDaoImpl {
         return userMapper.selectOneUserByUsername(username);
     }
 
-    public User updatePwd(int id, String newPassword){
+    public int updatePwd(int id, String newPassword){
         return userMapper.updatePwd(id, newPassword);
     }
 

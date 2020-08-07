@@ -18,19 +18,19 @@ public class JudgeDaoImpl {
         return judgeMapper.checkPwd(projectId, judgeName);
     }
 
-    public Judge changeUsername(int projectId, String judgeName){
-        return judgeMapper.changeUsername(projectId, judgeName);
+    public Judge changeUsername(int projectId, String judgeName,String newName){
+        return judgeMapper.changeUsername(projectId, judgeName,newName);
     }
 
-    public Judge changePwd(int projectId, String judgeName){
-        return judgeMapper.changePwd(projectId, judgeName);
+    public Judge changePwd(int projectId, String judgeName,String newPwd){
+        return judgeMapper.changePwd(projectId, judgeName,newPwd);
     }
 
-    public Judge insertJudge(int projectId, String judgeName, String judgePwd){
+    public int insertJudge(int projectId, String judgeName, String judgePwd){
         return judgeMapper.insertJudge(projectId, judgeName, judgePwd);
     }
 
-    Judge deleteJudge(int projectId,String judgeName){
+    public Judge deleteJudge(int projectId,String judgeName){
         return judgeMapper.deleteJudge(projectId, judgeName);
     }
 }

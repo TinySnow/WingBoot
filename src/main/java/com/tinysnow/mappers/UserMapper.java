@@ -24,7 +24,7 @@ public interface UserMapper {
      * @param email 用户邮箱
      * @return 返回用户
      */
-    User insertUser(@Param("username") String username,
+    int insertUser(@Param("username") String username,
                     @Param("password") String password,
                     @Param("email") String email);
 
@@ -41,7 +41,7 @@ public interface UserMapper {
      * @param newPassword 新密码
      * @return 返回用户
      */
-    User updatePwd(@Param("id") int id,
+    int updatePwd(@Param("id") int id,
                    @Param("newPassword") String newPassword);
 
     /**
